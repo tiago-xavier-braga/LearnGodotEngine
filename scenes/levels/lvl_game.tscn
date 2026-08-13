@@ -1,3 +1,74 @@
 [gd_scene format=3 uid="uid://cb25eki0ry3v"]
 
-[node name="Node3D" type="Node3D" unique_id=352231823]
+[ext_resource type="PackedScene" uid="uid://cp76h556o4rg3" path="res://scenes/characters/car.tscn" id="1_car"]
+[ext_resource type="Script" uid="uid://b6oxua1f23r7i" path="res://scripts/components/camera_follow.gd" id="2_cam"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_horizon_color = Color(0.6465, 0.6558, 0.6708, 1)
+ground_bottom_color = Color(0.2, 0.169, 0.1333, 1)
+ground_horizon_color = Color(0.6465, 0.6558, 0.6708, 1)
+
+[sub_resource type="Sky" id="Sky_lvl"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_lvl"]
+background_mode = 2
+sky = SubResource("Sky_lvl")
+ambient_light_source = 3
+
+[sub_resource type="BoxMesh" id="BoxMesh_road"]
+size = Vector3(7.5, 0.4, 400)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_road"]
+albedo_color = Color(0.2196, 0.2235, 0.2431, 1)
+roughness = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_road"]
+size = Vector3(7.5, 0.4, 400)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lane"]
+size = Vector3(0.12, 0.02, 400)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lane"]
+albedo_color = Color(0.8706, 0.8706, 0.8353, 1)
+roughness = 0.8
+
+[node name="LvlGame" type="Node3D" unique_id=352231823]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1900017258]
+environment = SubResource("Environment_lvl")
+
+[node name="Sun" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1744294700]
+transform = Transform3D(0.86602473, 0, 0.50000125, 0.38301092, 0.6428168, -0.66339225, -0.32140917, 0.76602, 0.5566952, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Road" type="StaticBody3D" parent="." unique_id=1385590237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -180)
+
+[node name="RoadMesh" type="MeshInstance3D" parent="Road" unique_id=777828203]
+mesh = SubResource("BoxMesh_road")
+surface_material_override/0 = SubResource("StandardMaterial3D_road")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road" unique_id=268351428]
+shape = SubResource("BoxShape3D_road")
+
+[node name="LaneMarkers" type="Node3D" parent="Road" unique_id=2083305676]
+
+[node name="LaneMarkerLeft" type="MeshInstance3D" parent="Road/LaneMarkers" unique_id=1757746127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.21, 0)
+mesh = SubResource("BoxMesh_lane")
+surface_material_override/0 = SubResource("StandardMaterial3D_lane")
+
+[node name="LaneMarkerRight" type="MeshInstance3D" parent="Road/LaneMarkers" unique_id=195662899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.21, 0)
+mesh = SubResource("BoxMesh_lane")
+surface_material_override/0 = SubResource("StandardMaterial3D_lane")
+
+[node name="Car" parent="." unique_id=1705489505 instance=ExtResource("1_car")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="FollowCamera" type="Camera3D" parent="." unique_id=100787173 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.90258527, 0.43051112, 0, -0.43051112, 0.90258527, 0, 4, 8)
+current = true
+script = ExtResource("2_cam")
+target = NodePath("../Car")
