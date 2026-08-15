@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://b6oxua1f23r7i" path="res://scripts/components/camera_follow.gd" id="2_cam"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
-sky_horizon_color = Color(0.6465, 0.6558, 0.6708, 1)
+sky_top_color = Color(0.2986172, 0.42893282, 0.763077, 1)
+sky_horizon_color = Color(0.54611844, 0.6737103, 0.7694531, 1)
 ground_bottom_color = Color(0.2, 0.169, 0.1333, 1)
 ground_horizon_color = Color(0.6465, 0.6558, 0.6708, 1)
+sun_angle_max = 180.0
 
 [sub_resource type="Sky" id="Sky_lvl"]
 sky_material = SubResource("ProceduralSkyMaterial_sky")
@@ -38,10 +40,6 @@ roughness = 0.8
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1900017258]
 environment = SubResource("Environment_lvl")
 
-[node name="Sun" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1744294700]
-transform = Transform3D(0.86602473, 0, 0.50000125, 0.38301092, 0.6428168, -0.66339225, -0.32140917, 0.76602, 0.5566952, 0, 10, 0)
-shadow_enabled = true
-
 [node name="Road" type="StaticBody3D" parent="." unique_id=1385590237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -180)
 
@@ -72,3 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 0.90258527, 0.43051112, 0, -0.43051112, 0.90
 current = true
 script = ExtResource("2_cam")
 target = NodePath("../Car")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1747358899]
+transform = Transform3D(0.9204788, 7.450581e-09, 0.3907925, -0.31028453, 0.60793334, 0.73084915, -0.23757577, -0.793988, 0.5595898, 0, 0, 0)
+light_energy = 1.5
