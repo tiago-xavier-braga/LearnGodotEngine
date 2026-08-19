@@ -3,7 +3,7 @@
 Endless runner built to learn Godot 4 end to end: a car drives forward on its
 own down a three-lane road, and the player dodges by switching lanes.
 
-Learning project, not aimed at release.
+Learning project, not aimed at release. Full design intent: [`docs/gdd.md`](docs/gdd.md).
 
 ## Requirements
 
@@ -27,9 +27,10 @@ slide between fixed positions on the road (x = -2.5, 0, +2.5).
 
 ```
 assets/     models, textures, materials, audio, fonts
-scenes/     characters, levels, ui
-scripts/    gameplay code (autoload, components, systems)
+scenes/     cars, levels, ui
+scripts/    car, components (autoload, systems planned)
 resources/  custom .tres data
+docs/       design doc, process notes
 ```
 
 Organised by resource type.
