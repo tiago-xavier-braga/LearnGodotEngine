@@ -12,9 +12,11 @@ func _physics_process(delta: float) -> void:
 
 	var goal := target.global_position + offset
 	var weight := 1.0 - exp(-follow_speed * delta)
-	
+
 	global_position = Vector3(
 		lerpf(global_position.x, goal.x, weight),
 		lerpf(global_position.y, goal.y, weight),
 		goal.z
 	)
+
+	look_at(target.global_position, Vector3.UP)
