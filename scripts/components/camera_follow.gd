@@ -18,5 +18,3 @@ func _physics_process(delta: float) -> void:
 		lerpf(global_position.y, goal.y, weight),
 		goal.z
 	)
-
-	look_at(target.global_position, Vector3.UP)
