@@ -44,6 +44,7 @@ environment = SubResource("Environment_lvl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -180)
 
 [node name="RoadMesh" type="MeshInstance3D" parent="Road" unique_id=777828203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.037831, 0, 0, 0)
 mesh = SubResource("BoxMesh_road")
 surface_material_override/0 = SubResource("StandardMaterial3D_road")
 
