@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cp76h556o4rg3"]
 
 [ext_resource type="Material" uid="uid://d2gxpfqeorlfc" path="res://assets/materials/mat_car.tres" id="1_yotxw"]
-[ext_resource type="Script" uid="uid://ylp2m8nu8tco" path="res://scripts/car.gd" id="2_car"]
+[ext_resource type="Script" uid="uid://ylp2m8nu8tco" path="res://scripts/car/car_controller.gd" id="2_car"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rcad"]
 resource_name = "colormap"

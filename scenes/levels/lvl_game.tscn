@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cb25eki0ry3v"]
 
-[ext_resource type="PackedScene" uid="uid://cp76h556o4rg3" path="res://scenes/characters/car.tscn" id="1_car"]
+[ext_resource type="PackedScene" uid="uid://cp76h556o4rg3" path="res://scenes/cars/car.tscn" id="1_car"]
 [ext_resource type="Script" uid="uid://b6oxua1f23r7i" path="res://scripts/components/camera_follow.gd" id="2_cam"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
