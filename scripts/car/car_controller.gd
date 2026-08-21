@@ -6,8 +6,10 @@ extends RigidBody3D
 @export var lane_distance: float = 2.5
 @export var lane_limit: int = 1
 @export var lane_speed: float = 10.0
+@export var delay_input: float = 0.3
 
 var _current_lane: int = 0
+var _can_switch_lane: bool = true
 
 func _physics_process(delta: float) -> void:
 	_drive_forward()
@@ -28,7 +30,15 @@ func _drive_forward() -> void:
 	apply_central_force(forward * acceleration * mass)
 
 func _change_lane(direction: int) -> void:
-	_current_lane = clampi(_current_lane + direction, -lane_limit, lane_limit)
+	if not _can_switch_lane:
+		return
+	var new_lane := clampi(_current_lane + direction, -lane_limit, lane_limit)
+	if new_lane == _current_lane:
+		return
+	_current_lane = new_lane
+	_can_switch_lane = false
+	await get_tree().create_timer(delay_input).timeout
+	_can_switch_lane = true
 
 
 func _track_lane(delta: float) -> void:
