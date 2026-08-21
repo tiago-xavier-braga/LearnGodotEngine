@@ -43,11 +43,14 @@ roughness = 0.8
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1900017258]
 environment = SubResource("Environment_lvl")
 
-[node name="Road" type="StaticBody3D" parent="." unique_id=1385590237]
+[node name="Road" type="StaticBody3D" parent="." unique_id=1385590237 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -180)
+script = ExtResource("3_y4oy0")
+target = NodePath("../Car")
+axis_ignored = Vector3(1, 1, 0)
 
 [node name="RoadMesh" type="MeshInstance3D" parent="Road" unique_id=777828203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.037831, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.9926286, 0, 0, -181.1753)
 mesh = SubResource("BoxMesh_road")
 surface_material_override/0 = SubResource("StandardMaterial3D_road")
 
@@ -57,12 +60,12 @@ shape = SubResource("BoxShape3D_road")
 [node name="LaneMarkers" type="Node3D" parent="Road" unique_id=2083305676]
 
 [node name="LaneMarkerLeft" type="MeshInstance3D" parent="Road/LaneMarkers" unique_id=1757746127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.21, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.9926286, -1.25, 0.21, -181.1753)
 mesh = SubResource("BoxMesh_lane")
 surface_material_override/0 = SubResource("StandardMaterial3D_lane")
 
 [node name="LaneMarkerRight" type="MeshInstance3D" parent="Road/LaneMarkers" unique_id=195662899]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.21, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.9926286, 1.25, 0.21, -181.1753)
 mesh = SubResource("BoxMesh_lane")
 surface_material_override/0 = SubResource("StandardMaterial3D_lane")
 
@@ -84,7 +87,8 @@ light_energy = 1.5
 [node name="Node" type="Node3D" parent="." unique_id=369274875 node_paths=PackedStringArray("target")]
 script = ExtResource("3_y4oy0")
 target = NodePath("../Car")
+axis_ignored = Vector3(0, 1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node" unique_id=1497184538]
-transform = Transform3D(144.37726, 0, 0, 0, 0.4835277, 0, 0, 0, 305.60742, 0, -0.30539274, 0)
+transform = Transform3D(1000, 0, 0, 0, 0.2, 0, 0, 0, 1000, 0, -0.30539274, -412.606)
 mesh = SubResource("BoxMesh_xoaip")
