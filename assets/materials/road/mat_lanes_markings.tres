@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dw58l4eaupix5"]
+
+[ext_resource type="Shader" path="res://assets/materials/road/dashed_line.gdshader" id="1_shader"]
+
+[resource]
+shader = ExtResource("1_shader")
+shader_parameter/dash_length = 1.0
+shader_parameter/gap_length = 1.0
+shader_parameter/line_color = Color(1, 0.7607843, 0.078431375, 1)
