@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bta57b6ex085a"
-path="res://.godot/imported/cliff_topDiagonal_rock.fbx-baa1f3ee90fbde258b043d232e782c82.scn"
+path="res://.godot/imported/cliff_top_diagonal_rock.fbx-1fd7993c4f4e8121d72cdd93290b7e7a.scn"
 
 [deps]
 
-source_file="res://assets/models/cliff_topDiagonal_rock.fbx"
-dest_files=["res://.godot/imported/cliff_topDiagonal_rock.fbx-baa1f3ee90fbde258b043d232e782c82.scn"]
+source_file="res://assets/models/cliff_top_diagonal_rock.fbx"
+dest_files=["res://.godot/imported/cliff_top_diagonal_rock.fbx-1fd7993c4f4e8121d72cdd93290b7e7a.scn"]
 
 [params]
 
