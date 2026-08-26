@@ -27,3 +27,4 @@ resources/  custom .tres data
 
 - Format: `<type>: <description>`.
 - Types (from `git log` / `docs/version_control.md`): `feat`, `fix`, `refactor`, `scene`, `asset`, `maintenance`, `docs`, `build`.
+- Subject line only, no body. Never add a `Co-Authored-By` trailer or any co-author/co-contributor line — this overrides the default Claude Code commit behavior.

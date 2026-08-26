@@ -1,17 +1,13 @@
 # Version Control
 
-
-
-
-
-
-
 ## Commits
 ### Pattern
 
 ```jsx
 <type>: <description>
 ```
+
+Subject line only — no commit body, no multi-paragraph messages. Never add a `Co-Authored-By` trailer or any other co-author/co-contributor line; commits in this repo list a single author.
 
 ### Comment type
 
