@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://r74d041w8em0"]
+
+[ext_resource type="Material" uid="uid://dbh22km1hg0ak" path="res://assets/materials/road/mat_road.tres" id="1_nhf6c"]
+[ext_resource type="Material" uid="uid://dw58l4eaupix5" path="res://assets/materials/road/mat_lanes_markings.tres" id="2_i8pxj"]
+[ext_resource type="ArrayMesh" uid="uid://cjjxwxlxvgh6l" path="res://assets/meshes/steps_rock.fbx" id="3_k2d5s"]
+[ext_resource type="Material" uid="uid://c5hkg1iff2fn8" path="res://assets/materials/road/mat_step_rock_brown.tres" id="4_6wmxi"]
+[ext_resource type="Material" uid="uid://b3rmfrkj5utqx" path="res://assets/materials/road/mat_step_rock_green.tres" id="5_35ge5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_npbqa"]
+size = Vector3(8, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_road"]
+size = Vector3(8, 0.5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dash"]
+size = Vector3(0.15, 0.02, 20)
+
+[node name="RoadBase" type="Node" unique_id=451975630]
+
+[node name="RoadBody" type="StaticBody3D" parent="." unique_id=9193079]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RoadBody" unique_id=630562410]
+material_override = ExtResource("1_nhf6c")
+mesh = SubResource("BoxMesh_npbqa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBody" unique_id=1547105283]
+shape = SubResource("BoxShape3D_road")
+
+[node name="LaneLine1" type="MeshInstance3D" parent="." unique_id=1735219959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.26, 0)
+material_override = ExtResource("2_i8pxj")
+mesh = SubResource("BoxMesh_dash")
+
+[node name="LaneLine2" type="MeshInstance3D" parent="." unique_id=1425730556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.26, 0)
+material_override = ExtResource("2_i8pxj")
+mesh = SubResource("BoxMesh_dash")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1176310522]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -8.45035, 0, 4.9379697)
+mesh = ExtResource("3_k2d5s")
+surface_material_override/0 = ExtResource("4_6wmxi")
+surface_material_override/1 = ExtResource("5_35ge5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=122193962]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -8.45035, 0, -5.0418324)
+mesh = ExtResource("3_k2d5s")
+surface_material_override/0 = ExtResource("4_6wmxi")
+surface_material_override/1 = ExtResource("5_35ge5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=240091460]
+transform = Transform3D(1.1924881e-07, 0, -10, 0, 10, 0, 10, 0, 1.1924881e-07, 8.971369, 0, 4.9379697)
+mesh = ExtResource("3_k2d5s")
+surface_material_override/0 = ExtResource("4_6wmxi")
+surface_material_override/1 = ExtResource("5_35ge5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=143447530]
+transform = Transform3D(1.1924881e-07, 0, -10, 0, 10, 0, 10, 0, 1.1924881e-07, 8.971369, 0, -5.0418324)
+mesh = ExtResource("3_k2d5s")
+surface_material_override/0 = ExtResource("4_6wmxi")
+surface_material_override/1 = ExtResource("5_35ge5")
