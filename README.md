@@ -1,9 +1,14 @@
 # LearnGodotEngine
 
-Endless runner built to learn Godot 4 end to end: a car drives forward on its
-own down a three-lane road, and the player dodges by switching lanes.
+A car drives forward on its own down a three-lane road and the player dodges
+by switching lanes. Built as a hands-on evaluation of Godot 4 and GDScript —
+not a game meant to ship, but a way to learn the engine's architecture, see
+how it compares to Unity, and judge what (if anything) is worth bringing into
+day-to-day workflow.
 
-Learning project, not aimed at release. Full design intent: [`docs/gdd.md`](docs/gdd.md).
+**Status: concluded.** The project stops at what's listed in the Roadmap
+below — no scoring, game over, UI, or further gameplay is planned. Background
+and evaluation notes: [`docs/gdd.md`](docs/gdd.md).
 
 ## Requirements
 
@@ -35,19 +40,22 @@ docs/       design doc, process notes
 
 Organised by resource type.
 
-## Roadmap
+## Roadmap (final)
+
+Everything below is what got built before the project was called done. Items
+left unchecked were part of the original design but were deliberately dropped
+once the evaluation goal was met — see [`docs/gdd.md`](docs/gdd.md).
 
 - [x] Project skeleton and folder structure
 - [x] Car scene with physics-driven forward movement
 - [x] Lane-switch input, left and right
 - [x] Third-person follow camera
-- [x] Test track with three fixed lanes
-- [ ] Endless scrolling track
-- [ ] Obstacle (box) scene with collision
-- [ ] Obstacle spawner — timer-based, random lane, rising frequency
-- [ ] Collision wired to game over through a `car_hit` signal
-- [ ] `GameManager` autoload for score and state
-- [ ] Distance-based scoring
-- [ ] Difficulty scaling through `@export` tuning values
-- [ ] Score HUD and game over screen with restart
-- [ ] Restart flow with a persisted local high score
+- [x] Endless scrolling track (segment spawner)
+- [x] Obstacle (box) scene with collision
+- [x] Obstacle spawner — timer-based, random lane
+- [ ] ~~Collision wired to game over through a `car_hit` signal~~ — dropped
+- [ ] ~~`GameManager` autoload for score and state~~ — dropped
+- [ ] ~~Distance-based scoring~~ — dropped
+- [ ] ~~Difficulty scaling through `@export` tuning values~~ — dropped
+- [ ] ~~Score HUD and game over screen with restart~~ — dropped
+- [ ] ~~Restart flow with a persisted local high score~~ — dropped

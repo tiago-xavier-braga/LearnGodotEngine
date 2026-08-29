@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project
 
 - Godot 4.7 learning project: endless runner, car auto-drives down a 3-lane road, player switches lanes to dodge.
-- Not aimed at release. Design intent: `docs/gdd.md`. Current scope/roadmap: `README.md`.
+- **Concluded.** This was a hands-on evaluation of Godot/GDScript against Unity, not a game meant to ship or be finished — scope is frozen at what's in `README.md`'s roadmap. Do not propose or implement new gameplay features (scoring, game over, UI, etc.) unless the user explicitly reopens scope. Background: `docs/gdd.md`.
 
 ## Running
 
