@@ -4,14 +4,15 @@ extends CharacterBody3D
 @export var lane_distance: float = 2.5
 @export var lane_limit: int = 1
 @export var lane_speed: float = 10.0
+@export var lane_smoothing: float = 8.0
 @export var forward_speed: float = 5.0
 @export var delay_input: float = 0.3
 
 var _current_lane: int = 0
 var _can_switch_lane: bool = true
 
-func _physics_process(delta: float) -> void:
-	_track_lane(delta)
+func _physics_process(_delta: float) -> void:
+	_track_lane()
 	_forward_move()
 	move_and_slide()
 
@@ -33,10 +34,10 @@ func _change_lane(direction: int) -> void:
 	await get_tree().create_timer(delay_input).timeout
 	_can_switch_lane = true
 
-func _track_lane(delta: float) -> void:
+func _track_lane() -> void:
 	var target_x := _current_lane * lane_distance
 	velocity.x = clampf(
-		(target_x - global_position.x) / delta, -lane_speed, lane_speed)
+		(target_x - global_position.x) * lane_smoothing, -lane_speed, lane_speed)
 
 func _forward_move() -> void:
 	velocity.z = -forward_speed
