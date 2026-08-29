@@ -2,7 +2,7 @@
 
 **Goal:** use a small endless-runner prototype as a hands-on way to learn Godot's architecture and GDScript — scene composition, physics, input, signals — and evaluate the engine against Unity as a possible addition to day-to-day workflow. Not a commercial game, and not meant to be finished as a complete game; the exercise stops once it had covered enough ground to judge the engine and pull out useful takeaways.
 
-**Outcome:** the project was closed at the scope in the [README roadmap](../README.md#roadmap-final) — car movement, lane switching, an endless scrolling track, obstacles, and a follow camera. The remaining systems described below (scoring, game over, UI, difficulty scaling) were part of the original design but were never built; they're kept here only as a record of the original plan, not as pending work.
+**Outcome:** the project was closed at the scope in [README's "What's implemented"](../README.md#whats-implemented) — car movement, lane switching, an endless scrolling track, obstacles, and a follow camera. The remaining systems described below (scoring, game over, UI, difficulty scaling) were part of the original design but were never built; they're kept here only as a record of the original plan, not as pending work.
 
 ## Original design (not fully built)
 

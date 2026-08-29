@@ -6,9 +6,9 @@ not a game meant to ship, but a way to learn the engine's architecture, see
 how it compares to Unity, and judge what (if anything) is worth bringing into
 day-to-day workflow.
 
-**Status: concluded.** The project stops at what's listed in the Roadmap
-below — no scoring, game over, UI, or further gameplay is planned. Background
-and evaluation notes: [`docs/gdd.md`](docs/gdd.md).
+**Status: concluded.** The project stops at what's listed below — no scoring,
+game over, UI, or further gameplay is planned. Background and evaluation
+notes: [`docs/gdd.md`](docs/gdd.md).
 
 ## Requirements
 
@@ -32,30 +32,24 @@ slide between fixed positions on the road (x = -2.5, 0, +2.5).
 
 ```
 assets/     models, textures, materials, audio, fonts
-scenes/     cars, levels, ui
-scripts/    car, components (autoload, systems planned)
+scenes/     cars, levels, road, obstacles, ui
+scripts/    car, road, camera, obstacles
 resources/  custom .tres data
 docs/       design doc, process notes
 ```
 
 Organised by resource type.
 
-## Roadmap (final)
+## What's implemented
 
-Everything below is what got built before the project was called done. Items
-left unchecked were part of the original design but were deliberately dropped
-once the evaluation goal was met — see [`docs/gdd.md`](docs/gdd.md).
+- Project skeleton and folder structure
+- Car scene with physics-driven forward movement
+- Lane-switch input, left and right
+- Third-person follow camera
+- Endless scrolling track (segment spawner)
+- Obstacle (box) scene with collision
+- Obstacle spawner — timer-based, random lane
 
-- [x] Project skeleton and folder structure
-- [x] Car scene with physics-driven forward movement
-- [x] Lane-switch input, left and right
-- [x] Third-person follow camera
-- [x] Endless scrolling track (segment spawner)
-- [x] Obstacle (box) scene with collision
-- [x] Obstacle spawner — timer-based, random lane
-- [ ] ~~Collision wired to game over through a `car_hit` signal~~ — dropped
-- [ ] ~~`GameManager` autoload for score and state~~ — dropped
-- [ ] ~~Distance-based scoring~~ — dropped
-- [ ] ~~Difficulty scaling through `@export` tuning values~~ — dropped
-- [ ] ~~Score HUD and game over screen with restart~~ — dropped
-- [ ] ~~Restart flow with a persisted local high score~~ — dropped
+Scoring, game over, UI, and further gameplay were part of the original design
+but were deliberately dropped once the evaluation goal was met — see
+[`docs/gdd.md`](docs/gdd.md) for the full original plan and what was learned.
