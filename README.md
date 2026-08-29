@@ -1,5 +1,7 @@
 # LearnGodotEngine
 
+![Gameplay demo](docs/demo.gif)
+
 A car drives forward on its own down a three-lane road and the player dodges
 by switching lanes. Built as a hands-on evaluation of Godot 4 and GDScript —
 not a game meant to ship, but a way to learn the engine's architecture, see
