@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dbh22km1hg0ak" path="res://assets/materials/road/mat_road.tres" id="1_nhf6c"]
 [ext_resource type="Material" uid="uid://dw58l4eaupix5" path="res://assets/materials/road/mat_lanes_markings.tres" id="2_i8pxj"]
-[ext_resource type="ArrayMesh" uid="uid://cjjxwxlxvgh6l" path="res://assets/meshes/steps_rock.fbx" id="3_k2d5s"]
+[ext_resource type="ArrayMesh" uid="uid://cjjxwxlxvgh6l" path="res://assets/models/steps_rock.fbx" id="3_k2d5s"]
 [ext_resource type="Material" uid="uid://c5hkg1iff2fn8" path="res://assets/materials/road/mat_step_rock_brown.tres" id="4_6wmxi"]
 [ext_resource type="Material" uid="uid://b3rmfrkj5utqx" path="res://assets/materials/road/mat_step_rock_green.tres" id="5_35ge5"]
 
@@ -15,7 +15,7 @@ size = Vector3(8, 0.5, 20)
 [sub_resource type="BoxMesh" id="BoxMesh_dash"]
 size = Vector3(0.15, 0.02, 20)
 
-[node name="RoadBase" type="Node" unique_id=451975630]
+[node name="RoadBase" type="Node3D" unique_id=451975630]
 
 [node name="RoadBody" type="StaticBody3D" parent="." unique_id=9193079]
 
